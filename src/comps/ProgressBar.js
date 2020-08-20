@@ -1,17 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import useStorage from "../hooks/useStorage";
 
 const ProgressBar = (props) => {
   const { progress, url } = useStorage(props.file);
-  console.log(progress);
+
+  useEffect(() => {
+    if (url) {
+      props.setFile(null);
+    }
+  }, [url]);
+
   return (
     <div className="progress">
       <div
-        className="progress-bar"
+        className="progress-bar bg-success"
         role="progressbar"
         aria-valuenow={progress}
-        aria-valuemin="0"
-        aria-valuemax="100"
+        style={{ width: progress + "%" }}
       ></div>
     </div>
   );
