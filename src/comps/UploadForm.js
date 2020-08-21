@@ -7,7 +7,6 @@ const UploadForm = (props) => {
 
   const changeHandler = (e) => {
     let selected = e.target.files[0];
-    console.log(selected);
 
     if (selected) {
       setFile(selected);
