@@ -19,7 +19,7 @@ const ImageGrid = (props) => {
             <motion.img
               src={doc.urlValue}
               alt="images"
-              className="img-fluid"
+              className="img-fluid mb-3"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1 }}
